@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Rich Text Editor</title>
+    <!-- Custom scss link -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" href="favicon/icons8-text-editor-16.png" type="image/x-icon">
+    <!-- Remix icon link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="toolbar">
+            <div class="group">
+                <button onclick="bold()" title="Bold"><i class='ri-bold'></i></button>
+                <button onclick="italic()" title="Italic"><i class='ri-italic'></i></button>
+                <button onclick="strikethrough()" title="Strikethrough"><i class='ri-strikethrough'></i></button>
+                <button onclick="underline()" title="Underline"><i class='ri-underline'></i></button>
+                <button onclick="subscript()" title="Subscript"><i class="ri-subscript"></i></button>
+                <button onclick="superscript()" title="Superscript"><i class='ri-superscript'></i></button>
+            </div>
+            <div class="group">
+                <button onclick="alignLeft()" title="Align Left"><i class='ri-align-left'></i></button>
+                <button onclick="alignCenter()" title="Align Center"><i class='ri-align-center'></i></button>
+                <button onclick="alignRight()" title="Align Right"><i class='ri-align-right'></i></button>
+                <button onclick="alignJustify()" title="Align Justify"><i class='ri-align-justify'></i></button>
+            </div>
+            <div class="group">
+                <button onclick="insertOrderedList()" title="Ordered List"><i class='ri-list-ordered'></i></button>
+                <button onclick="insertUnorderedList()" title="Unordered List"><i class='ri-list-unordered'></i></button>
+                <button onclick="increase()" title="Indent Increase"><i class='ri-indent-increase'></i></button>
+                <button onclick="decrease()" title="Indent Decrease"><i class='ri-indent-decrease'></i></button>
+                <button onclick="image()" title="Image"><i class='ri-image-line'></i></button>
+            </div>
+        </div>
+        <div class="textarea">
+            <span class="placeholder">Enter Text</span>
+            <div contenteditable="true" class="editable-text"></div>
+        </div>
+    </div>
+    <!-- main js link -->
+    <script src="js/index.js"></script>
+    <script>
+        const  editableText = document.querySelector(`.editable-text`),
+       placeholder = document.querySelector(`.placeholder`);
+
+editableText.onkeyup = (e) => {
+    var length = editableText.innerHTML.length;
+
+    if(length <= 0){
+        placeholder.style.display = "block";
+    }
+    else{
+        placeholder.style.display = "none";
+    }
+}
+    </script>
+</body>
+
+</html>
